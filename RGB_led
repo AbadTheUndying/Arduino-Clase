@@ -1,0 +1,52 @@
+  int berdea = 9;
+  int urdina = 10;
+  int gorria = 11;
+ 
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(berdea, OUTPUT);
+  pinMode(urdina, OUTPUT);
+  pinMode(gorria, OUTPUT);
+  analogWrite(berdea, 0);
+  analogWrite(urdina, 0);
+  analogWrite(gorria, 0);
+}
+ 
+void loop() {
+  // berdea
+  analogWrite(berdea, 255);
+  analogWrite(urdina, 0);
+  analogWrite(gorria, 0);
+  delay(2000);
+ 
+  // urdina
+  analogWrite(berdea, 0);
+  analogWrite(urdina, 255);
+  analogWrite(gorria, 0);
+  delay(2000);
+ 
+ 
+  // gorria
+  analogWrite(berdea, 255);
+  analogWrite(urdina, 0);
+  analogWrite(gorria, 255);
+  delay(2000);
+ 
+  // horia
+  analogWrite(berdea, 255);
+  analogWrite(urdina, 0);
+  analogWrite(gorria, 255);
+  delay(2000);
+ 
+  // morea
+  analogWrite(berdea, 0);
+  analogWrite(urdina, 255);
+  analogWrite(gorria, 255);
+  delay(2000);
+ 
+  // zuria
+  analogWrite(berdea, 255);
+  analogWrite(urdina, 255);
+  analogWrite(gorria, 255);
+  delay(2000);
+}
