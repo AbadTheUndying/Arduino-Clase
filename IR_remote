@@ -1,0 +1,65 @@
+#include <IRremote.hpp>
+ 
+int SENTSOREA = 7;
+int LED_Urd=12;
+int LED_Gor=11;
+int LED_Ber=10;
+int LED_Hor=9;
+int LED_Urd2=8;
+IRrecv irrecv(SENTSOREA);
+decode_results codigo;
+void setup()
+{
+  Serial.begin(9600);
+  irrecv.enableIRIn();
+  pinMode(LED_Urd,OUTPUT);
+  pinMode(LED_Gor,OUTPUT);
+  pinMode(LED_Ber,OUTPUT);
+  pinMode(LED_Hor,OUTPUT);
+  pinMode(LED_Urd2,OUTPUT);
+}
+void loop()
+{
+if (irrecv.decode(&codigo))
+  {
+    Serial.println(codigo.value, HEX);
+    if(codigo.value==0xFF6897)
+    {
+      digitalWrite(LED_Urd,HIGH);
+    }
+    if(codigo.value==0xFFB04F)
+    {
+      digitalWrite(LED_Gor,HIGH);
+    }
+    if(codigo.value==0xFF18E7)
+    {
+      digitalWrite(LED_Ber,HIGH);
+    }
+    if(codigo.value==0xFF10EF)
+    {
+      digitalWrite(LED_Hor,HIGH);
+    }
+    if(codigo.value==0xFF5AA5)
+    {
+      digitalWrite(LED_Urd2,HIGH);
+    }
+    if(codigo.value==0xFF52AD)
+    {
+      digitalWrite(LED_Urd,LOW);
+      digitalWrite(LED_Gor,LOW);
+      digitalWrite(LED_Ber,LOW);
+      digitalWrite(LED_Hor,LOW);
+      digitalWrite(LED_Urd2,LOW);
+    }
+  delay(500);
+  irrecv.resume();
+  }
+}
+ 
+ 
+//1 = FF6897
+//3 = FFB04F
+//5 = FF18E7
+//7 = FF10EF
+//9 = FF5AA5
+//# = FF52AD
