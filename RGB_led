@@ -3,7 +3,6 @@
   int gorria = 11;
  
 void setup() {
-  // put your setup code here, to run once:
   pinMode(berdea, OUTPUT);
   pinMode(urdina, OUTPUT);
   pinMode(gorria, OUTPUT);
