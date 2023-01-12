@@ -1,11 +1,12 @@
 #include <Adafruit_LiquidCrystal.h>
 Adafruit_LiquidCrystal lcd(12,11,5,4,3,2);
+int LED = 1
 void setup() 
 {
-  pinMode(1, OUTPUT);
+  pinMode(LED, OUTPUT);
   Serial.begin(9600);
   lcd.begin(16,2);
-  digitalWrite(1,LOW);
+  digitalWrite(LED,LOW);
 }
 void loop() 
 {
@@ -15,10 +16,10 @@ void loop()
   lcd.print("HEZETASUNA: " + hezetasuna);
   if(analogRead(A0)<=460)
   {
-    digitalWrite(1, HIGH);
+    digitalWrite(LED, HIGH);
   }else
   {
-    digitalWrite(1, LOW);
+    digitalWrite(LED, LOW);
   }
   delay(200);
 }
