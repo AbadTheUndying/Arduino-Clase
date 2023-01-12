@@ -1,0 +1,24 @@
+#include <Adafruit_LiquidCrystal.h>
+Adafruit_LiquidCrystal lcd(12,11,5,4,3,2);
+void setup() 
+{
+  pinMode(1, OUTPUT);
+  Serial.begin(9600);
+  lcd.begin(16,2);
+  digitalWrite(1,LOW);
+}
+void loop() 
+{
+  int hezetasuna = analogRead(A0);
+  Serial.println(analogRead(A0));
+  lcd.setCursor(0,0);
+  lcd.print("HEZETASUNA: " + hezetasuna);
+  if(analogRead(A0)<=460)
+  {
+    digitalWrite(1, HIGH);
+  }else
+  {
+    digitalWrite(1, LOW);
+  }
+  delay(200);
+}
