@@ -1,16 +1,15 @@
 #include <Servo.h>
 Servo serbomotorra;
 void setup() {
-  // put your setup code here, to run once:
   serbomotorra.attach(9);
   serbomotorra.write(0);
   Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  for(int i=0; i<=180; i++)
+  for(int i=0; i<=180; i++){
     Serial.print(i);
     serbomotorra.write(i);
-    delay(25);
+    delay(75);
+    }
 }
