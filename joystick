@@ -1,0 +1,23 @@
+int x;
+int y;
+int LED1 = 2;
+int LED2 = 4;
+
+void setup(){
+
+}
+void loop(){
+  x = analogRead(A0);
+  y = analogRead(A1);
+  if(x>=0 && x<480){
+    analogWrite(LED1, map(x,0,480,255,0));
+  }
+  else if(x>520 && x<=1023){
+    analogWrite(LED2, map(x,520,1023,0,255));
+  }
+  else{
+    analogWrite(LED1,0);
+    analogWrite(LED2,0);
+  }
+}
+    
