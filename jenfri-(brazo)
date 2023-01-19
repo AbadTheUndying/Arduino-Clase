@@ -1,0 +1,37 @@
+#include <Servo.h>
+
+
+int x;
+int y;
+Servo servoMotor;
+Servo servoMotor1;
+
+void setup() {
+  servoMotor.attach(9);
+  servoMotor1.attach(10);
+  servoMotor.write(90);
+  servoMotor1.write(90);
+
+}
+
+void loop() {
+  if(analogRead(A0)<200 && x<180){
+    x++;
+    servoMotor.write(x);
+  }
+  if(analogRead(A0)>700 && x>0){
+    x--;
+    servoMotor.write(x);
+  }
+  if(analogRead(A1)<200 && y<180){
+    y++;
+    servoMotor1.write(y);
+  }
+  if(analogRead(A1)>700 && y>0){
+    y--;
+    servoMotor1.write(y);
+  }
+  delay(15);
+
+
+}
