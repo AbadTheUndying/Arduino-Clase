@@ -1,1 +1,51 @@
+int rojo = 13;
+int ambar = 12;
+int verde = 11;
+int Projo = 10;
+int Pverde = 9;
+int zumbador =8;
+void setup()
+{
+  pinMode(rojo, OUTPUT);
+  pinMode(ambar, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(Projo, OUTPUT);
+  pinMode(Pverde, OUTPUT);
+  pinMode(zumbador, OUTPUT);
+}
+void loop()
+{
+  digitalWrite(rojo, HIGH);
+  while(rojo > LOW)
+  {
+    digitalWrite(Pverde, HIGH);
+    tone(zumbador,700,2000);
+    delay(2000);
+    digitalWrite(Pverde, LOW);
+    break;
+  }
+  digitalWrite(rojo, LOW);
+  delay(500);
+  
+  digitalWrite(ambar, HIGH);
+    while(ambar > LOW)
+  {
+    digitalWrite(Projo, HIGH);
+    delay(1000);
+    digitalWrite(Projo, LOW);
+    break;
+  }
+  digitalWrite(ambar, LOW);
+  
+  digitalWrite(verde, HIGH);
+    while(verde> LOW)
+  {
+    digitalWrite(Projo, HIGH);
+      delay(2000);
+    digitalWrite(Projo, LOW);
+    break;
+  }
+  digitalWrite(verde, LOW);
+  delay(500);
+}
 
