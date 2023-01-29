@@ -1,0 +1,74 @@
+int rojo1 = 13;
+int ambar1 = 12;
+int verde1 = 11;
+int Projo1 = 10;
+int Pverde1 = 9;
+int rojo2 = 8;
+int ambar2 = 7;
+int verde2 = 6;
+int Projo2 = 5;
+int Pverde2 = 4;
+
+void setup() {
+  pinMode(rojo1, OUTPUT);
+  pinMode(ambar1, OUTPUT);
+  pinMode(verde1, OUTPUT);
+  pinMode(Projo1, OUTPUT);
+  pinMode(Pverde1, OUTPUT);
+  pinMode(rojo2, OUTPUT);
+  pinMode(ambar2, OUTPUT);
+  pinMode(verde2, OUTPUT);
+  pinMode(Projo2, OUTPUT);
+  pinMode(Pverde2, OUTPUT);
+}
+void loop() { 
+  digitalWrite(verde1, HIGH);
+  digitalWrite(Projo1, HIGH);
+  digitalWrite(rojo2, HIGH);
+  digitalWrite(Pverde2, HIGH);
+  delay(4000);
+  digitalWrite(verde1, LOW);
+  digitalWrite(Projo1, LOW);
+  digitalWrite(rojo2, LOW);
+  digitalWrite(Pverde2, LOW);
+
+  digitalWrite(ambar1, HIGH);
+  digitalWrite(Projo1, HIGH);
+  digitalWrite(rojo2, HIGH);
+  digitalWrite(Pverde2, HIGH);
+  delay(2000);
+  digitalWrite(ambar1, LOW);
+  digitalWrite(Projo1, LOW);
+  digitalWrite(rojo2, LOW);
+  digitalWrite(Pverde2, LOW);
+
+  digitalWrite(rojo1, HIGH);
+  digitalWrite(Pverde1, HIGH);
+  digitalWrite(verde2, HIGH);
+  digitalWrite(Projo2, HIGH);
+  delay(3000);
+  digitalWrite(rojo1, LOW);
+  digitalWrite(Pverde1, LOW);
+  digitalWrite(verde2, LOW);
+  digitalWrite(Projo2, LOW);
+
+  digitalWrite(rojo1, HIGH);
+  digitalWrite(Pverde1, HIGH);
+  digitalWrite(ambar2, HIGH);
+  digitalWrite(Projo2, HIGH);
+  delay(2000);
+  digitalWrite(rojo1, LOW);
+  digitalWrite(Pverde1, LOW);
+  digitalWrite(ambar2, LOW);
+  digitalWrite(Projo2, LOW);
+
+  digitalWrite(verde1, HIGH);
+  digitalWrite(Projo1, HIGH);
+  digitalWrite(rojo2, HIGH);
+  digitalWrite(Pverde2, HIGH);
+  delay(1000);
+  digitalWrite(verde1, LOW);
+  digitalWrite(Projo1, LOW);
+  digitalWrite(rojo2, LOW);
+  digitalWrite(Pverde2, LOW);
+}
